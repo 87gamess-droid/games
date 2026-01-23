@@ -105,7 +105,47 @@ img {
     font-size: 14px;
   }
 }
+/* ===== MOBILE HEADER LAYOUT ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;        /* susun ke bawah */
+    align-items: center;
+    padding: 16px 20px;
+    gap: 12px;
+  }
 
+  header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  /* nav pindah ke bawah h1 */
+  .nav-center {
+    order: 2;                      /* pastikan di bawah h1 */
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav-center a {
+    margin-left: 0;                /* hapus margin PC */
+    font-size: 14px;
+  }
+
+  /* search tetap di bawah / kanan */
+  .search-container {
+    order: 3;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-center a {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+  }
+}
 
     /* ===== HERO SLIDER ===== */
 .hero-slider {
