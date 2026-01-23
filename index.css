@@ -15,6 +15,8 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+   margin: 0;
+  overflow-x: hidden;
 }
 main {
   flex: 1;
@@ -27,6 +29,13 @@ main {
       color: var(--text);
       overflow-x: hidden;
     }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 
     /* ===== NAVBAR ===== */
     header {
@@ -85,6 +94,18 @@ main {
     }
 
     nav a:hover::after { width: 100%; }
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
 
     /* ===== HERO SLIDER ===== */
 .hero-slider {
@@ -93,6 +114,13 @@ main {
   max-height: 800px;
    margin-top: -60px; /* naik ke atas */
 }
+.hero-slider,
+.slides,
+.slide {
+  width: 100%;
+  overflow: hidden;
+}
+
 
 .slides {
   position: relative;
@@ -118,17 +146,17 @@ main {
 }
 
 .slide-1 {
-  background-image: url('battlefield 6.jfif');
+  background-image: url('battlefield-6.jfif');
   background-position: center 60%;
 }
 
 .slide-2 {
-  background-image: url('ghost recon wildlands.jpg');
+  background-image: url('ghost-recon-wildlands.jpg');
   background-position: center 10%;
 }
 
 .slide-3 {
-  background-image: url('Battlefield V.avif');
+  background-image: url('battlefield-V.avif');
   background-position: center 10%;
 }
 
@@ -254,14 +282,32 @@ main {
   .overlay h2 {
     font-size: 42px;
   }
+
+@media (max-width: 768px) {
+  .hero-slider h2 {
+    font-size: 22px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 }
 /* input default tersembunyi */
 .search-container {
   position: relative;
+   max-width: 100%;
 }
 
 #search-input {
   position: absolute;
+  width: 100%;
   right: 46px;                /* geser ke kiri dari icon */
   width: 0;
   padding: 0;
@@ -362,10 +408,11 @@ main {
 
     .title p { color: var(--muted); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 34px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 16px;
     }
 
     /* ===== NEW CYBER CARD ===== */
@@ -393,6 +440,7 @@ main {
 
 .card {
   position: relative;
+  width: 100%;
   background: rgba(14,16,32,0.75);
   backdrop-filter: blur(12px);
   border-radius: 26px;
