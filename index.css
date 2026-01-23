@@ -349,11 +349,6 @@ img {
   }
 }
 }
-@media (max-width: 768px) {
-  .overlay p {
-    display: none;
-  }
-}
 
 /* input default tersembunyi */
 .search-container {
@@ -722,97 +717,49 @@ img {
 .card.full.switch:hover .content {
   opacity: 1;
 }
-/* ===== ULTRA MINI CARD (MOBILE) ===== */
 @media (max-width: 700px) {
-
-  /* GRID SUPER RAPAT */
-  .grid {
-    gap: 12px;
-    padding: 8px;
-  }
-
-  /* CARD BASE */
-  .card {
-    border-radius: 16px;
-    background: rgba(10,12,24,0.85);
-  }
-
-  /* MATIKAN EFEK HOVER */
-  .card:hover,
-  .card:hover::before {
-    transform: none;
-    box-shadow: none;
-    opacity: 0;
-  }
-
-  /* FULL IMAGE MINI */
+  /* ukuran card diperkecil */
   .card.full.switch {
-    height: 190px;       /* 🔥 ULTRA MINI */
+    height: 280px;          /* dari 360px → lebih ringkas */
+    border-radius: 20px;
   }
 
-  /* IMAGE */
+  /* gambar ikut menyesuaikan */
   .card.full.switch .thumb img {
-    object-position: center;
-    filter: brightness(0.9);
+    object-position: center top;
   }
 
-  /* INFO PANEL */
+  /* konten lebih compact */
   .card.full.switch .content {
-    padding: 14px;
-    justify-content: flex-end;
-    background: linear-gradient(
-      to top,
-      rgba(5,6,10,0.95),
-      rgba(5,6,10,0.55) 70%,
-      transparent
-    );
-    opacity: 1;         /* INFO SELALU TAMPIL */
+    padding: 20px;
   }
 
-  /* TITLE */
-  .card h4 {
-    font-size: 15px;
-    margin-bottom: 4px;
-    line-height: 1.2;
+  .card.full.switch h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
   }
 
-  /* DESC (1–2 BARIS) */
-  .card p {
-    font-size: 11px;
-    line-height: 1.35;
-    margin-bottom: 8px;
+  .card.full.switch p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 14px;
 
+    /* potong teks biar nggak kepanjangan */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  /* BUTTON MINI */
-  .card a {
-    padding: 6px 16px;
-    font-size: 11px;
-    border-radius: 30px;
-    box-shadow: none;
+  .card.full.switch a {
+    padding: 8px 22px;
+    font-size: 12px;
   }
 
-  /* BADGE MINI */
-  .badge {
-    top: 10px;
-    left: 10px;
-    font-size: 9px;
-    padding: 3px 8px;
-    letter-spacing: 0.5px;
-  }
-
-  /* HORIZONTAL MINI */
-  .card.horizontal {
-    gap: 12px;
-  }
-
-  .card.horizontal .thumb {
-    height: 140px;
-    border-radius: 14px;
+  /* badge ikut mengecil */
+  .card.full.switch .badge {
+    font-size: 10px;
+    padding: 4px 10px;
   }
 }
 
