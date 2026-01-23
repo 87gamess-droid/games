@@ -137,6 +137,8 @@ img {
   .search-container {
     order: 3;
     margin-top: 8px;
+    align-self: flex-end;   /* kunci ke kanan */
+    margin-right: 6px;     /* jarak dikit dari edge */
   }
 }
 @media (max-width: 768px) {
@@ -146,6 +148,15 @@ img {
     background: rgba(255,255,255,0.05);
   }
 }
+@media (max-width: 768px) {
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 24px 60px;
+  }
+}
+
 
     /* ===== HERO SLIDER ===== */
 .hero-slider {
@@ -705,6 +716,51 @@ img {
 
 .card.full.switch:hover .content {
   opacity: 1;
+}
+@media (max-width: 700px) {
+  /* ukuran card diperkecil */
+  .card.full.switch {
+    height: 280px;          /* dari 360px → lebih ringkas */
+    border-radius: 20px;
+  }
+
+  /* gambar ikut menyesuaikan */
+  .card.full.switch .thumb img {
+    object-position: center top;
+  }
+
+  /* konten lebih compact */
+  .card.full.switch .content {
+    padding: 20px;
+  }
+
+  .card.full.switch h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .card.full.switch p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+
+    /* potong teks biar nggak kepanjangan */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card.full.switch a {
+    padding: 8px 22px;
+    font-size: 12px;
+  }
+
+  /* badge ikut mengecil */
+  .card.full.switch .badge {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
 }
 
 
